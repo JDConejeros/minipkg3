@@ -10,16 +10,15 @@
 #' what_time("es")
 what_time <- function(language = "es") {
 
-  if (!language %in% c("es", "en")) {
-    stop("Either choose 'es' or 'en' as a language.")
-  }
+  rlang::arg_match0(language, c("es", "en"))
 
   time <- format(Sys.time(), "%H:%M")
-  
+
+  exclamation <- praise::praise("${Exclamation}")
+
   switch(
     language,
-    es = sprintf("¡Ahora son las %s!", time),
-    en = sprintf("It is %s now!", time)
+    es = sprintf("%s! Ahora son las %s!", exclamation, time),
+    en = sprintf("%s! It is %s now!", exclamation, time)
   )
-  
 }
