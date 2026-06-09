@@ -1,0 +1,22 @@
+---
+title: "minipkg3"
+vignette: >
+  %\VignetteIndexEntry{minipkg3}
+  %\VignetteEngine{quarto::html}
+  %\VignetteEncoding{UTF-8}
+knitr:
+  opts_chunk:
+    collapse: true
+    comment: '#>'
+---
+
+```{r}
+#| label: setup
+library(minipkg3)
+```
+
+Puedo explicar y mostrar lo que hace el paquete. 
+
+```{r}
+what_time()
+```
